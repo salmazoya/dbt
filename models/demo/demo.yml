@@ -19,6 +19,8 @@ models:
     description: "DBT MODEL CUSTOMER model"
   - name: customer_vw
     description: "DBT MODEL CUSTOMER VIEW"
+  - name: sales
+    description: "DBT MODEL FOR SALES"
           
           
 
@@ -34,3 +36,8 @@ sources:
     schema: public
     tables:
       - name: customer_src
+  - name: sales
+    database: DBT_DB
+    schema: public
+    tables:
+      - name: sales_src
