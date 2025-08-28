@@ -23,8 +23,12 @@ models:
     description: "DBT MODEL FOR SALES"
   - name: product
     description: "DBT MODEL FOR PRODUCT"
-          
-          
+  - name: purchase
+    description: "DBT MODEL FOR PURCHASE"
+  - name: clean_orders
+    description: "DBT MODEL FOR clean orders"         
+  - name: final_orders
+    description: "DBT MODEL FOR final orders"          
 
 
 sources:
@@ -48,3 +52,13 @@ sources:
     schema: public
     tables:
       - name: product_src
+  - name: purchase
+    database: DBT_DB
+    schema: public
+    tables:
+      - name: purchase_src
+  - name: orders
+    database: DBT_DB
+    schema: public
+    tables:
+      - name: base_orders
