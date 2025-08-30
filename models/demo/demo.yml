@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: employee
+    description: "DBT model for employee table"
+    columns:
+      - name: emp_id
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              values: ['1','2','3','4','5']
+              config: 
+                severity: warn
+      - name: emp_salary
+        tests:
+          - value_check
+  - name: customer
+    description: "DBT MODEL CUSTOMER model"
+  - name: customer_vw
+    description: "DBT MODEL CUSTOMER VIEW"
+  - name: sales
+    description: "DBT MODEL FOR SALES"
+  - name: product
+    description: "DBT MODEL FOR PRODUCT"
+  - name: purchase
+    description: "DBT MODEL FOR PURCHASE"
+  - name: clean_orders
+    description: "DBT MODEL FOR clean orders"         
+  - name: final_orders
+    description: "DBT MODEL FOR final orders"          
+
+
+sources:
+  - name: employee
+    database: DBT_DB
+    schema: public
+    tables:
+      - name: employee_raw
+  - name: customer
+    database: DBT_DB
+    schema: public
+    tables:
+      - name: customer_src
+  - name: sales
+    database: DBT_DB
+    schema: public
+    tables:
+      - name: sales_src
+  - name: product
+    database: DBT_DB
+    schema: public
+    tables:
+      - name: product_src
+  - name: purchase
+    database: DBT_DB
+    schema: public
+    tables:
+      - name: purchase_src
+  - name: orders
+    database: DBT_DB
+    schema: public
+    tables:
+      - name: base_orders
+  - name: patient
+    database: DBT_DB
+    schema: public
+    tables:
+      - name: patient_src
