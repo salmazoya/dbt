@@ -62,3 +62,8 @@ sources:
     schema: public
     tables:
       - name: base_orders
+  - name: patient
+    database: DBT_DB
+    schema: public
+    tables:
+      - name: patient_src
